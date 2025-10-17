@@ -1,0 +1,31 @@
+fabric-energy-project/
+│
+├── data/
+│   ├── raw/                 # Raw CSV/JSON pulled from Fingrid API
+│   ├── bronze/              # Ingested as-is into Fabric Lakehouse
+│   ├── silver/              # Cleaned + normalized tables
+│   ├── gold/                # Aggregated / analytics-ready
+│
+├── notebooks/
+│   ├── 01_ingest_data.ipynb     # Spark (Python + Scala examples)
+│   ├── 02_transform_bronze.ipynb
+│   ├── 03_build_silver_gold.ipynb
+│   ├── 04_streaming_pipeline.ipynb
+│
+├── pipelines/
+│   ├── batch_pipeline.json      # Fabric Data Factory pipeline definition
+│   ├── streaming_pipeline.json  # Eventstream + Spark streaming config
+│
+├── dashboards/
+│   └── hydro_power_report.pbix  # Power BI dashboard file
+│
+├── ci-cd/
+│   ├── github-actions.yml       # CI/CD workflow (lint + tests + deploy)
+│   └── tests/
+│       ├── test_spark_jobs.py
+│       ├── test_sql_queries.sql
+│
+├── docs/
+│   ├── README.md                # Project overview
+│   ├── architecture.png         # Diagram: bronze-silver-gold + CI/CD
+│   └── data_dictionary.md
